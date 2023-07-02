@@ -14,7 +14,7 @@ const pool = new Pool({
 });
 
 // Ruta para obtener todos los productos
-app.get('/api/products', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM products');
