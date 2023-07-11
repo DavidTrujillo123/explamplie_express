@@ -1,17 +1,20 @@
 const express = require('express');
 const { Pool } = require('pg');
+const cors = require('cors');
+
 
 const app = express();
 const port = process.env.PORT || 3000;
-
+app.use(cors());
 // Configuración de la conexión a la base de datos PostgreSQL
 // const pool = new Pool({
 //   user: 'postgres',
 //   host: 'localhost',
-//   database: 'express',
+//   database: 'ejem',
 //   password: '200113',
 //   port: 5432,
 // });
+
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
