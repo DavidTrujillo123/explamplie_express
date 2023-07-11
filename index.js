@@ -1,28 +1,21 @@
 const express = require('express');
 const { Pool } = require('pg');
-const cors = require('cors');
-
-
 const app = express();
 const port = process.env.PORT || 3000;
-app.use(cors());
-// Configuración de la conexión a la base de datos PostgreSQL
+// Configuración de la conexión a la base de datos PostgreSQL offline
 // const pool = new Pool({
 //   user: 'postgres',
 //   host: 'localhost',
-//   database: 'ejem',
+//   database: 'express',
 //   password: '200113',
 //   port: 5432,
 // });
-
-
-
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  });
 // Ruta para obtener todos los productos
 app.get('/', async (req, res) => {
   try {
@@ -39,5 +32,4 @@ app.get('/', async (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor en funcionamiento en el puerto ${port}`);
 });
-
 
