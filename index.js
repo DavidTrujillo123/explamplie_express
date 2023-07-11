@@ -1,7 +1,7 @@
 const express = require('express');
 const { Pool } = require('pg');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 // Configuración de la conexión a la base de datos PostgreSQL offline
 // const pool = new Pool({
 //   user: 'postgres',
