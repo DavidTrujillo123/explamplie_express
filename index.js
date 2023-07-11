@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended: true}))
 // app.use(cors())
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://davidtrujillo123.github.io/protosoft_v1/html/home.html',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
