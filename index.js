@@ -12,13 +12,14 @@ const port = process.env.PORT || 3000;
 //   password: '200113',
 //   port: 5432,
 // });
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
-  });
 
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 // Ruta para obtener todos los productos
 app.get('/', async (req, res) => {
   try {
@@ -32,8 +33,8 @@ app.get('/', async (req, res) => {
     res.status(500).send('Error del servidor');
   }
 });
-
 app.listen(port, () => {
   console.log(`Servidor en funcionamiento en el puerto ${port}`);
 });
+
 
